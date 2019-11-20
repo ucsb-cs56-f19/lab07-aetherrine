@@ -7,8 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class FeatureCollection {
-  public String type;
-  private static Logger logger = LoggerFactory.getLogger(FeatureCollection.class);
+    public String type;
+    private static Logger logger = LoggerFactory.getLogger(FeatureCollection.class);
+    public Metadata metadata;
 
    /**
      * Create a FeatureCollection object from json representation
@@ -19,18 +20,18 @@ public class FeatureCollection {
      *      "https://tools.ietf.org/html/rfc7946">https://tools.ietf.org/html/rfc7946</a>
      */
     public static FeatureCollection fromJSON(String json) {
-      try {
-          ObjectMapper objectMapper = new ObjectMapper();
-          objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-          FeatureCollection featureCollection = objectMapper.readValue(json, FeatureCollection.class);
-          return featureCollection;
-      } catch (JsonProcessingException jpe) {
-          logger.error("JsonProcessingException:" + jpe);
-          return null;
-      } catch (Exception e) {
-          logger.error("Exception:" + e);
-          return null;
-      }
-  }
+            FeatureCollection featureCollection = objectMapper.readValue(json, FeatureCollection.class);
+            return featureCollection;
+        } catch (JsonProcessingException jpe) {
+            logger.error("JsonProcessingException:" + jpe);
+            return null;
+        } catch (Exception e) {
+            logger.error("Exception:" + e);
+            return null;
+        }
+    }
 }
