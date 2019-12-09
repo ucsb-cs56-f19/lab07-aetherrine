@@ -11,12 +11,11 @@ import java.util.List;
 
 @ControllerAdvice
 public class AuthControllerAdvice {
+    @Autowired   
+    private UserRepository userRepository;
 
     @Autowired   
     private MembershipService membershipService;
-
-    @Autowired   
-    private UserRepository userRepository;
 
     @ModelAttribute("isLoggedIn")
     public boolean getIsLoggedIn(OAuth2AuthenticationToken token){
