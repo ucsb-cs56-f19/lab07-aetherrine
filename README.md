@@ -1,5 +1,6 @@
 * https://ucsb-cs56-f19.github.io/lab07-aetherrine/
 * https://cs56-f19-lab07-aetherrine.herokuapp.com/
+* https://travis-ci.org/ucsb-cs56-f19/lab07-aetherrine
 * https://github.com/ucsb-cs56-f19/lab07-aetherrine
 
 
